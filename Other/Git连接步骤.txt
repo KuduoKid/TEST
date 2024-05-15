@@ -1,0 +1,67 @@
+git config --global user.name ""
+git config --global user.email ""
+
+生成公共秘钥
+ssh-keygen -t rsa -C "email"         //id_rsa.pub
+
+验证连接
+~/.ssh或 ~/.ssh ls
+ssh -T git@github.com
+
+连接到仓库
+git init                                           //初始化
+新建repository
+
+复制对应git远程地址并建立SSH                       //例: git@github.com:KuduoKid/Class1.git
+git remote add 仓库名字 连接地址
+
+
+有必要在本地创建个人分支确保主分支安全
+git checkout -b
+
+
+
+
+
+查看工作区和暂存区代码区别
+git status
+
+将当前目录下修改的所有代码添加到暂存区
+git add 
+提交所有变化
+git add -A
+
+git commit -m "注释"
+
+将暂存区内容添加到本地仓库，不添加注释
+git commit --allow-empty-message -m ""
+
+git pull origin master 将远程仓库master中的信息同步到本地仓库中
+
+
+提交
+git push origin master 将本地仓库推送到远程
+
+git push -u 仓库名 分支名 (第一次加 "-u")
+
+强制推送 (覆盖远程数据)
+git push 仓库名 master -f
+
+git push -u "" master
+
+{
+设置了 sshkey 还是 permission denied 怎么回事?
+
+回到如下命令，检查当前配置的SSH对应的git账号；
+
+ssh -T git@github.com
+然后用如下命令(id_rsa对应目标账户的私钥)命令，制定目标Git账号
+
+ssh-add -K ~/.ssh/id_rsa
+}
+
+
+
+
+
+
