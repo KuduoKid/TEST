@@ -1,0 +1,20 @@
+Dism /Online /Cleanup-Image /ScanHealth
+
+Dism /Online /Cleanup-Image /CheckHealth
+
+DISM /Online /Cleanup-image /RestoreHealth
+
+chkdsk C: /f
+
+完成后重启电脑，再次输入：
+sfc /SCANNOW
+
+
+对于联机修复，位于 windir\Logs\CBS\CBS.log 的 CBS 日志文件中
+有详细信息。例如 C:\Windows\Logs\CBS\CBS.log。对于脱机修复，
+/OFFLOGFILE 标记提供的日志文件中有详细信息。
+
+
+
+直接用命令提示符修复（未对系统盘进行BitLocker加密）
+点击“疑难解答”----“高级选项”-----“命令提示符”，输入命令chkdsk /x /f c:
