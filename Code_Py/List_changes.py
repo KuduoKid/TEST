@@ -8,7 +8,7 @@ for inviting in name:
     print(inviting, ",", invite)
 
 print(f"Unfortunately,  {changes} is unable to attend dinner.")
-# f: 
+# f: 格式化字符串, 加f后可以在字符串里面使用用花括号括起来的变量和表达式
 
 
 #方法remove()用法
